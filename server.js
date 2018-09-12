@@ -111,6 +111,23 @@ module.exports = app ;
 var http = require('http');
 var fs = require('fs');
 
+//--------------------------
+
+var N = 200;
+var sum = 0;
+
+for(var i = 0;i < N;i++)//N times
+{
+  for(var j = 1;j <= N*N;j = j*2)//log (base 2) N^2
+  {
+    sum++;
+  }
+}
+
+//complexity: N * log(2)(N^2) -> N * log (N^2) -> N * 2log(N) -> N * log(N);
+console.log(sum);
+
+//--------------------------
 
 http.createServer(function (req,res){
     fs.readFile('body.html', function(err, data) {
